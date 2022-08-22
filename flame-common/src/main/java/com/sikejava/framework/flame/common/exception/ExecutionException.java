@@ -15,4 +15,8 @@ public abstract class ExecutionException extends RuntimeException {
     protected ExecutionException(Throwable cause) {
         super(cause);
     }
+
+    protected ExecutionException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

@@ -17,4 +17,8 @@ public class JavaFxException extends ExecutionException {
     public JavaFxException(Throwable cause) {
         super(cause);
     }
+
+    public JavaFxException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }
