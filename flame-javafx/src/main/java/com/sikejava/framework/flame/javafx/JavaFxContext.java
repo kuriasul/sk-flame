@@ -71,7 +71,7 @@ public enum JavaFxContext {
      * @author skjv2014@163.com
      * @since 2022-08-21 18:43:00
      */
-    public static <C> FxViewVO<C> load(String fxmlPath) {
+    public static <C> FxView<C> load(String fxmlPath) {
         return fxViewLoader.load(fxmlPath);
     }
 
@@ -84,7 +84,7 @@ public enum JavaFxContext {
      * @author skjv2014@163.com
      * @since 2022-08-21 18:43:00
      */
-    public static <C> FxViewVO<C> load(String fxmlPath, String cssPath) {
+    public static <C> FxView<C> load(String fxmlPath, String cssPath) {
         return fxViewLoader.load(fxmlPath, cssPath);
     }
 

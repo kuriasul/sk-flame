@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-public class FxViewVO<C> extends BaseObject {
+public class FxView<C> extends BaseObject {
     private final Parent root;
     private final C controller;
 }

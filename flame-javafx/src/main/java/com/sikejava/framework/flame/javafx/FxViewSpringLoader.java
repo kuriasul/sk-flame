@@ -26,7 +26,7 @@ public class FxViewSpringLoader implements FxViewLoader {
     }
 
     @Override
-    public <C> FxViewVO<C> load(String fxmlPath) {
+    public <C> FxView<C> load(String fxmlPath) {
         FXMLLoader fxmlLoader = new FXMLLoader(ResourceUtils.getFxmlUrl(fxmlPath));
         fxmlLoader.setControllerFactory(this.applicationContext::getBean);
 
@@ -39,17 +39,17 @@ public class FxViewSpringLoader implements FxViewLoader {
 
         C controller = fxmlLoader.getController();
 
-        return new FxViewVO<>(root, controller);
+        return new FxView<>(root, controller);
     }
 
     @Override
-    public <C> FxViewVO<C> load(String fxmlPath, String cssPath) {
-        FxViewVO<C> fxViewVO = load(fxmlPath);
+    public <C> FxView<C> load(String fxmlPath, String cssPath) {
+        FxView<C> fxView = load(fxmlPath);
 
         if (StringUtils.hasText(cssPath)) {
-            fxViewVO.getRoot().getStylesheets().add(ResourceUtils.getCssExternalForm(cssPath));
+            fxView.getRoot().getStylesheets().add(ResourceUtils.getCssExternalForm(cssPath));
         }
 
-        return fxViewVO;
+        return fxView;
     }
 }
